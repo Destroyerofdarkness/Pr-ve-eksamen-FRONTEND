@@ -6,7 +6,7 @@ const authorize = async(req,res, next)=>{
     const {success, user} = await get_req(`/auth/verifyJWT/${token}`);
     if(success){
         console.log(user);
-        if(user.roler === "admin"){
+        if(user.role === "admin"){
         next()
         }else{
         res.status(401).send("Unauthorized access")
