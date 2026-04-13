@@ -54,6 +54,13 @@ form a{
     font-family: var(--josefin);
     font-weight: 400;
 }
+#error{
+    color: rgb(253, 91, 91);
+    text-align: end;
+
+    font-family: var(--judson);
+    font-size: 1vw;
+}
 :root{
     --primary:#00096B;
      --judson:"Judson", serif;

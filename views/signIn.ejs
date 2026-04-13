@@ -1,5 +1,6 @@
 <%- include("./partials/head.ejs") %>
 <link rel="stylesheet" href="/css/signIn.css">
+<script src="/script/fetch_login.js" defer></script>
 <%- include("./partials/header.ejs") %>
 <main>
     <h2><%= title %></h2>
@@ -7,6 +8,7 @@
         <div>
         <label for="code">Kode:</label>
         <input type="text" name="code" id="code" placeholder="Skriv inn koden..">
+        <p id="error"></p>
         </div>
         <button type="submit">Logg på</button>
         <a href="mailto:example@gmail.com">Har ikke koden? Spør her!</a>
