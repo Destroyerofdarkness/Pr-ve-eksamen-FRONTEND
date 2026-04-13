@@ -1,0 +1,20 @@
+<%- include("./partials/head.ejs") %>
+<link rel="stylesheet" href="/css/publish.css">
+<%- include("./partials/header.ejs") %>
+<main>
+    <h2><%= title %></h2>
+    <form>
+        <div>
+            <label for="title">Tittel:</label>
+            <input type="text" name="title" id="title" placeholder="Skriv inn tittel..">
+        </div>
+            <label for="description">Skriv avviket:</label>
+            <textarea name="description" id="description" placeholder="Skriv inn avviket som skjedde.."></textarea>
+        <button>Send Avvik</button>
+    </form>
+</main>
+
+
+
+</body>
+</html>

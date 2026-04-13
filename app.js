@@ -9,7 +9,9 @@ const cors = require("cors");
 const path = require("path")
 
 //Routes
-const auth_routes = require("./routes/auth_routes")
+const auth_routes = require("./routes/auth_routes");
+
+const report_routes = require("./routes/report_routes");
 
 //Conf options
 
@@ -29,7 +31,10 @@ app.use(
   }),
 );
 
+//Used Routes
 app.use(auth_routes);
+
+app.use("/avvik",report_routes);
 
 //Server start
 app.listen(process.env.PORT, () => {

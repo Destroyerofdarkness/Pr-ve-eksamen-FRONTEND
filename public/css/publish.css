@@ -1,0 +1,74 @@
+main{
+    margin-top: 2vw;
+    display: flex;
+    flex-direction: column;
+    gap: 5vw;
+    align-self: center;
+    align-content: center;
+    margin-bottom: 4vw;
+}
+h2{
+    font-family: var(--judson);
+    font-size: 2vw;
+    color: var(--primary);
+    text-align: center;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    background: var(--primary);
+    padding: 1.5vw;
+    border-radius: 0.3vw;
+    width: max-content;
+    height: max-content;
+}
+form label{
+    color: white;
+    font-family: var(--josefin);
+    font-weight: 400;
+    font-size: 1.5vw;
+}
+form div{
+    margin-bottom: 2vw;
+}
+form input{
+    width: 18vw;
+    height: max-content;
+    border-radius: 0.2vw;
+    border: 0;
+    font-size: 1.3vw;
+    padding: 0.5vw;
+    font-family: var(--judson);
+    outline: none;
+}
+form textarea{
+    width: 40vw;
+    margin-top: 1vw;
+    height: 15vw;
+    border: 0;
+    outline: none;
+    font-family: var(--judson);
+    font-size: 1.3vw;
+    padding: 0.5vw;
+    border-radius: 0.4vw;
+}
+form button{
+    align-self: flex-end;
+    font-size: 1.5vw;
+    margin-top: 1vw;
+    cursor: pointer;
+    background: white;
+    color: var(--primary);
+    border: 0;
+    font-family: var(--josefin);
+    font-weight: 400;
+    border-radius: 0.3vw;
+    padding: 0.4vw;
+    padding-left: 2vw;
+    padding-right: 2vw;
+}
+:root{
+    --primary:#00096B;
+     --judson:"Judson", serif;
+     --josefin:  "Josefin Sans", sans-serif;
+}
