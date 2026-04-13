@@ -1,0 +1,42 @@
+body, html {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+}
+header{
+    background: var(--primary);
+    width: 100%;
+    height: max-content;
+    display: flex;
+    align-content: center;
+}
+h1{
+    color: white;
+    margin: 2vw;
+    flex: 1;
+}
+nav{
+    margin: 1vw;
+    display: flex;
+    gap: 2vw;
+    justify-content: center;
+    align-content: center;
+    justify-self: end;
+}
+nav a{
+    display: flex;
+    background: white;
+    padding: 0.9vw;
+    border-radius: 0.4vw;
+    text-decoration: none;
+    color: var(--primary);
+    font-family: var(--judson);
+    font-size: 1.5vw;
+    align-self: center;
+}
+:root{
+    --primary:#00096B;
+     --judson:"Judson", serif;
+     --josefin:  "Josefin Sans", sans-serif;
+}
