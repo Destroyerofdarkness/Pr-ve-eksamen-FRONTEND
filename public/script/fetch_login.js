@@ -14,7 +14,7 @@ form.addEventListener("submit", async(e)=>{
     const {success, errors, token} = await res.json();
 
     if(success){
-        window.location.href = `/auth/cookie/${token}`
+        window.location.href = `/cookie/${token}`
     }else{
     error.innerHTML = errors.name
     }
