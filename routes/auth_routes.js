@@ -5,4 +5,6 @@ router.get("/", controller.sign_in_page);
 
 router.post("/signIn", controller.sign_in)
 
+router.get("/cookie/:token", controller.make_cookie)
+
 module.exports = router

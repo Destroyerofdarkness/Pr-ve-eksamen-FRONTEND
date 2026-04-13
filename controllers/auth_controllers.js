@@ -23,4 +23,16 @@ const sign_in = async(req,res)=>{
     }
 }
 
-module.exports = {sign_in_page, sign_in}
+const make_cookie = async(req,res)=>{
+    const token = req.params.token
+    try {
+        res.cookie("jwt",token, {httpOnly:true, maxAge: 24*60*60*1000});
+        res.redirect("/avvik/publiser")
+    } catch (err) {
+        console.log(err);
+        res.status(500).send("Internal Server Error")
+    }
+}
+
+
+module.exports = {sign_in_page, sign_in, make_cookie}

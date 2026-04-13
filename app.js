@@ -8,6 +8,8 @@ const cors = require("cors");
 
 const path = require("path")
 
+const cookieParser = require("cookie-parser");
+
 //Routes
 const auth_routes = require("./routes/auth_routes");
 
@@ -30,6 +32,8 @@ app.use(
     allowedHeaders: ["Content-Type", "Authorization"],
   }),
 );
+
+app.use(cookieParser());
 
 //Used Routes
 app.use(auth_routes);
