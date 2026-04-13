@@ -8,7 +8,18 @@
         <section class="report">
             <h3><%= report.title  %></h3>
             <div><%= report.description %></div>
+            <% if(user.role === "admin"){ %>
+                <form class="updateStatus">
+                    <select name="status" id="status" >
+                        <option value="<%=report.status  %>">Nå: <%=report.status  %></option>
+                        <option value="Aktiv">Aktiv</option>
+                        <option value="Lukket">Lukket</option>
+                    </select>
+                    <button>Oppdater</button>
+                </form>
+            <% }else{ %>
             <p>Status: <%= report.status  %></p>
+            <% } %>
         </section>
     <%});  %>
     <% }else { %>

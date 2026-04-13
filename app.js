@@ -10,6 +10,8 @@ const path = require("path")
 
 const cookieParser = require("cookie-parser");
 
+const {checkUser}= require("./middleware/authenticate")
+
 //Routes
 const auth_routes = require("./routes/auth_routes");
 
@@ -34,6 +36,8 @@ app.use(
 );
 
 app.use(cookieParser());
+
+app.use(checkUser);
 
 //Used Routes
 app.use(auth_routes);

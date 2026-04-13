@@ -49,6 +49,26 @@ h2{
     font-size: 1.7vw;
     text-align: center;
 }
+.updateStatus{
+    display: flex;
+    margin: 0.4vw;
+    gap: 0.4vw;
+}
+.updateStatus select{
+    font-size: 1vw;
+    color: var(--primary);
+    outline: none;
+    border: 0;
+    width: max-content;
+    height: max-content;
+    padding: 0.5vw;
+}
+.updateStatus button{
+    background: white;
+    border-radius: 0.4vw;
+    border: 0;
+    cursor: pointer;
+}
 :root{
     --primary:#00096B;
      --judson:"Judson", serif;

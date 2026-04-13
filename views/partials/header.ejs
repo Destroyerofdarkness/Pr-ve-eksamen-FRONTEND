@@ -4,9 +4,11 @@
  <h1>Helsebygg AS</h1>
  <nav>
     <a href="/brukerveiledning">Brukerveiledning</a>
+    <% if(user){ %>
     <a href="/avvik/alle">Les Avvik</a>
     <a href="/avvik/publiser">Send Avvik</a>
     <a href="/logout">Logg Ut</a>
+    <% } %>
     
  </nav>
 </header>
