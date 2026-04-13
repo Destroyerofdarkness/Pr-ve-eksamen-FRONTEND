@@ -1,4 +1,4 @@
-const post_req = require("../handlers/postContentHandler")
+const post_req = require("../handlers/postContentHandler");
 
 const sign_in_page = (req,res)=>{
     try {
