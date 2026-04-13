@@ -1,4 +1,5 @@
 const post_req = require("../handlers/postContentHandler");
+const get_req = require("../handlers/getContentHandler")
 
 const report_publish_page = (req,res)=>{
     try {
@@ -23,4 +24,15 @@ const report_publish = async(req,res)=>{
     }
 }
 
-module.exports = {report_publish_page, report_publish}
+const all_report_page = async(req,res)=>{
+    try {
+        const {reports} = await get_req("/report/all");
+        console.log(reports)
+        res.render("allReports", {title: "Les Avvik", reports})
+    } catch (err) {
+        console.log(err);
+        res.status(500).send("Internal Server Error. Please Wait!!")
+    }
+}
+
+module.exports = {report_publish_page, report_publish, all_report_page}

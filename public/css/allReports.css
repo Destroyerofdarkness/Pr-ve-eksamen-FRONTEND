@@ -1,0 +1,56 @@
+main{
+margin-top: 2vw;
+align-content: center;
+display: flex;
+flex-direction: column;
+gap: 3vw;
+}
+h2{
+    margin-top: 2vw;
+    font-family: var(--judson);
+    font-size: 2vw;
+    color: var(--primary);
+    text-align: center;
+}
+.report{
+    align-self: center;
+    max-width: 50vw;
+    background: var(--primary);
+    border-radius: 0.5vw;
+    padding: 1vw;
+}
+.report h3{
+    color: white;
+    font-family: var(--josefin);
+    font-weight: 400;
+    font-size: 1.7vw;
+}
+.report div{
+    font-size: 1.4vw;
+    font-family: var(--judson);
+    color: white;
+}
+.report p{
+    font-size: 1.2vw;
+    font-family: var(--judson);
+    color: white;
+}
+#noReport{
+    align-self: center;
+    width: 30vw;
+    background: var(--primary);
+    border-radius: 0.5vw;
+    padding: 1vw;
+}
+#noReport h3{
+    color: white;
+    font-family: var(--josefin);
+    font-weight: 400;
+    font-size: 1.7vw;
+    text-align: center;
+}
+:root{
+    --primary:#00096B;
+     --judson:"Judson", serif;
+     --josefin:  "Josefin Sans", sans-serif;
+}
