@@ -1,6 +1,16 @@
 <%- include("./partials/head.ejs") %>
+<link rel="stylesheet" href="/css/signIn.css">
 <%- include("./partials/header.ejs") %>
-
-    
+<main>
+    <h2><%= title %></h2>
+    <form>
+        <div>
+        <label for="code">Kode:</label>
+        <input type="text" name="code" id="code" placeholder="Skriv inn koden..">
+        </div>
+        <button type="submit">Logg på</button>
+        <a href="mailto:example@gmail.com">Har ikke koden? Spør her!</a>
+    </form>
+</main>
 </body>
 </html>
