@@ -52,6 +52,11 @@ form textarea{
     padding: 0.5vw;
     border-radius: 0.4vw;
 }
+.error{
+    color: rgb(253, 91, 91);
+    font-family: var(--judson);
+    font-size: 1vw;
+}
 form button{
     align-self: flex-end;
     font-size: 1.5vw;
