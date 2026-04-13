@@ -30,9 +30,19 @@ const make_cookie = async(req,res)=>{
         res.redirect("/avvik/publiser")
     } catch (err) {
         console.log(err);
-        res.status(500).send("Internal Server Error")
+        res.status(500).send("Internal Server Error. Please Wait!")
+    }
+}
+
+const logout = (req,res)=>{
+    try {
+        res.cookie("jwt", "",{maxAge: 10});
+        res.redirect("/")
+    } catch (err) {
+        console.log(err);
+        res.status(500).send("Internal Server Error. Please Wait!")
     }
 }
 
 
-module.exports = {sign_in_page, sign_in, make_cookie}
+module.exports = {sign_in_page, sign_in, make_cookie, logout}
