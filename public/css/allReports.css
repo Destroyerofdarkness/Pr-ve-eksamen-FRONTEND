@@ -67,6 +67,10 @@ h2{
     background: white;
     border-radius: 0.4vw;
     border: 0;
+    font-size: 1.3vw;
+    font-family: var(--josefin);
+    font-weight: 400;
+    color: var(--primary);
     cursor: pointer;
 }
 :root{

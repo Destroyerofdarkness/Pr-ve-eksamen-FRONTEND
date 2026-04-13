@@ -1,5 +1,6 @@
 <%- include("./partials/head.ejs") %>
 <link rel="stylesheet" href="/css/allReports.css">
+<script src="/script/fetch_update_status.js"></script>
 <%- include("./partials/header.ejs") %>
 <h2><%= title  %></h2>
 <main>
@@ -10,12 +11,13 @@
             <div><%= report.description %></div>
             <% if(user.role === "admin"){ %>
                 <form class="updateStatus">
+                <input type="hidden" name="id" id="id" value="<%=report._id  %>">
                     <select name="status" id="status" >
                         <option value="<%=report.status  %>">Nå: <%=report.status  %></option>
                         <option value="Aktiv">Aktiv</option>
                         <option value="Lukket">Lukket</option>
                     </select>
-                    <button>Oppdater</button>
+                    <button type="submit">Oppdater</button>
                 </form>
             <% }else{ %>
             <p>Status: <%= report.status  %></p>
