@@ -4,7 +4,9 @@ align-content: center;
 display: flex;
 flex-direction: column;
 gap: 3vw;
+margin-bottom: 4vw;
 }
+
 h2{
     margin-top: 2vw;
     font-family: var(--judson);
