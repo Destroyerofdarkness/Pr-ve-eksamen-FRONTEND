@@ -16,6 +16,6 @@ form.addEventListener("submit", async(e)=>{
     if(success){
         window.location.href = `/cookie/${token}`
     }else{
-    error.innerHTML = errors.name
+    error.innerHTML = errors.passwd
     }
 })
