@@ -21,7 +21,7 @@ form.addEventListener("submit", async (e) => {
 
   if (success) {
     window.alert("Avviken ble registrert!!");
-    window.location.reload();
+    window.location.href= "/avvik/alle";
   } else {
     descError.innerHTML = errors.description;
     titleError.innerHTML = errors.title;

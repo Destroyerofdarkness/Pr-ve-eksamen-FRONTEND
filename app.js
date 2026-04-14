@@ -17,6 +17,8 @@ const auth_routes = require("./routes/auth_routes");
 
 const report_routes = require("./routes/report_routes");
 
+const guide_routes = require("./routes/guide_routes");
+
 //Conf options
 
 app.set("view engine", "ejs");
@@ -40,6 +42,9 @@ app.use(cookieParser());
 app.use(checkUser);
 
 //Used Routes
+
+app.use(guide_routes);
+
 app.use(auth_routes);
 
 app.use("/avvik",report_routes);

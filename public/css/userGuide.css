@@ -1,0 +1,50 @@
+h2{
+    font-family: var(--judson);
+    font-size: 2vw;
+    margin-top: 2vw;
+    color: var(--primary);
+    text-align: center;
+}
+main{
+    display: flex;
+    align-self: center;
+    flex-direction: column;
+    background: var(--primary);
+    padding: 2vw;
+    gap: 4vw;
+    margin-top: 2vw;
+    margin-bottom: 4vw;
+}
+.stage{
+    display: flex;
+    flex-direction: column;
+    max-width: 50vw;
+}
+.stage img{
+    height: max-content;
+    width: 50vw;
+}
+.stage p{
+    font-size: 1.2vw;
+    color: white;
+    font-family: var(--josefin);
+}
+#description{
+    background: var(--primary);
+    max-width: 40vw;
+    padding: 1vw;
+    border-radius: 0.4vw;
+    margin: 3vw;
+    align-self: center;
+}
+#description p {
+    font-size: 1.5vw;
+    color: white;
+    font-family: var(--judson);
+}
+
+:root{
+    --primary:#00096B;
+     --judson:"Judson", serif;
+     --josefin:  "Josefin Sans", sans-serif;
+}
