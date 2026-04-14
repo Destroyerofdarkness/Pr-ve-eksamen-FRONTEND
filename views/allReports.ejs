@@ -1,12 +1,19 @@
 <%- include("./partials/head.ejs") %>
 <link rel="stylesheet" href="/css/allReports.css">
-<script src="/script/fetch_update_status.js"></script>
+<script src="/script/fetch_update_status.js" defer></script>
+<script src="/script/fetch_delete_report.js" defer></script>
 <%- include("./partials/header.ejs") %>
 <h2><%= title  %></h2>
 <main>
     <% if(reports.length>0){ %>
     <%reports.forEach(report => {%>
         <section class="report">
+            <% if(user.role === "admin") %>
+                <form class="delete">
+                    <button class="delete" id="id" name="id" data-id="<%=report._id  %>" type="submit">Slett</button>
+                </form>
+                
+            <%  %>
             <h3><%= report.title  %></h3>
             <div><%= report.description %></div>
             <% if(user.role === "admin"){ %>

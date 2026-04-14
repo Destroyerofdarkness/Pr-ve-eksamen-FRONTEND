@@ -12,4 +12,6 @@ router.get("/alle", authenticate, controller.all_report_page)
 
 router.put("/oppdater",authorize ,controller.report_update);
 
+router.delete("/slett", authorize, controller.report_delete)
+
 module.exports = router

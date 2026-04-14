@@ -1,6 +1,7 @@
 const post_req = require("../handlers/postContentHandler");
 const get_req = require("../handlers/getContentHandler");
 const put_req = require("../handlers/updateContentHandler")
+const delete_req = require("../handlers/deleteContentHandler")
 
 const report_publish_page = (req,res)=>{
     try {
@@ -50,4 +51,18 @@ const report_update = async(req,res)=>{
     }
 }
 
-module.exports = {report_publish_page, report_publish, all_report_page, report_update}
+const report_delete = async(req,res)=>{
+    try {
+        const {success} = await delete_req("/report/delete",req.body);
+        if(success){
+            res.status(201).json({success});
+        }else{
+            res.status(400).json({success});
+        }
+    } catch (err) {
+        console.log(err);
+        res.status(500).json({success:false})
+    }
+}
+
+module.exports = {report_publish_page, report_publish, all_report_page, report_update, report_delete}
