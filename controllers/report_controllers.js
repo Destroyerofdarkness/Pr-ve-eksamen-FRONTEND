@@ -3,9 +3,10 @@ const get_req = require("../handlers/getContentHandler");
 const put_req = require("../handlers/updateContentHandler")
 const delete_req = require("../handlers/deleteContentHandler")
 
-const report_publish_page = (req,res)=>{
+const report_publish_page = async(req,res)=>{
     try {
-        res.render("publish", {title:"Send Avvik"})
+        const {allCategories} = await get_req("/category/get")
+        res.render("publish", {title:"Send Avvik", categories: allCategories})
     } catch (err) {
         console.log(err);
         res.status(500).send("Internal Server Error")

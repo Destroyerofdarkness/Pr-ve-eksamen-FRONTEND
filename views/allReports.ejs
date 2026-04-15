@@ -16,6 +16,7 @@
             <%  %>
             <h3><%= report.title  %></h3>
             <div><%= report.description %></div>
+            <p>Kategori: <%= report.category  %></p>
             <% if(user.role === "admin"){ %>
                 <form class="updateStatus">
                 <input type="hidden" name="id" id="id" value="<%=report._id  %>">
