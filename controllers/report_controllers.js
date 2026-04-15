@@ -13,6 +13,17 @@ const report_publish_page = async(req,res)=>{
     }
 }
 
+const report_statistic_page = async(req,res)=>{
+    try {
+        const {allCategories} = await get_req("/category/get");
+        const {reports} = await get_req("/report/all");
+        res.render("statistics", {title:"Avviks Statistik", reports, categories:allCategories});
+    } catch (err) {
+        console.log(err);
+        res.status(500).send("Internal Server Error")
+    }
+}
+
 const report_publish = async(req,res)=>{
     try {
         const {success,errors} = await post_req("/report/publish",req.body)
@@ -73,4 +84,4 @@ const report_delete = async(req,res)=>{
     }
 }
 
-module.exports = {report_publish_page, report_publish, all_report_page, report_update, report_delete}
+module.exports = {report_publish_page, report_publish, all_report_page, report_update, report_delete, report_statistic_page}

@@ -1,0 +1,21 @@
+<%- include("./partials/head.ejs") %>
+<link rel="stylesheet" href="/css/statistics.css">
+<%- include("./partials/header.ejs") %>
+<h2>Statistikk</h2>
+<main>
+    <% categories.forEach(category=>{ %>
+        <% let count = 0 %>
+        <%reports.forEach(report=>{%>
+        <% if(report.category === category.name){ %>
+            <% count++ %>
+            <% } %>
+       <% }) %>
+            <section class="category"> 
+                <h3><%=count  %></h3>
+            <p><%=category.name  %></p>
+        </section>
+        <% }) %>
+</main>
+
+</body>
+</html>

@@ -1,0 +1,46 @@
+h2{
+    margin-top: 2vw;
+    font-family: var(--judson);
+    font-size: 2vw;
+    color: var(--primary);
+    text-align: center;
+}
+main{
+    display: grid;
+    margin-left: 3vw;
+    gap: 5vw;
+    align-self: center;
+    align-content: center;
+    height: auto;
+    grid-template-columns: repeat(3, 1fr);
+}
+main section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+main section h3{
+    color: var(--primary);
+    font-family: var(--josefin);
+    font-weight: 400;
+    font-size: 1.5vw;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+main section p {
+    color: var(--primary);
+    font-family: var(--judson);
+    font-size: 1.2vw;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+.category {
+  width: calc(100% / 3);
+}
+:root{
+    --primary:#00096B;
+     --judson:"Judson", serif;
+     --josefin:  "Josefin Sans", sans-serif;
+}

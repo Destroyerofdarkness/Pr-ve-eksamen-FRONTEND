@@ -2,9 +2,12 @@
 <body>
 <header>
  <h1>Helsebygg AS</h1>
- <nav>
+ <nav>  
     <a href="/brukerveiledning">Brukerveiledning</a>
     <% if(user){ %>
+      <% if(user.role === "admin"){ %>
+        <a href="/avvik/statistikk">Statistikk</a>
+        <% } %>
     <a href="/avvik/alle">Les Avvik</a>
     <a href="/avvik/publiser">Send Avvik</a>
     <a href="/logout">Logg Ut</a>
