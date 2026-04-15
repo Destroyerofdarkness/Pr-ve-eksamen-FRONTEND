@@ -1,43 +1,121 @@
 <%- include("./partials/head.ejs") %>
-<link rel="stylesheet" href="/css/allReports.css">
-<script src="/script/fetch_update_status.js" defer></script>
-<script src="/script/fetch_delete_report.js" defer></script>
-<%- include("./partials/header.ejs") %>
-<h2><%= title  %></h2>
-<main>
-    <% if(reports.length>0){ %>
-    <%reports.forEach(report => {%>
-        <section class="report">
-            <% if(user.role === "admin") %>
-                <form class="delete">
-                    <button class="delete" id="id" name="id" data-id="<%=report._id  %>" type="submit">Slett</button>
-                </form>
-                
-            <%  %>
-            <h3><%= report.title  %></h3>
-            <div><%= report.description %></div>
-            <p>Kategori: <%= report.category  %></p>
-            <% if(user.role === "admin"){ %>
-                <form class="updateStatus">
-                <input type="hidden" name="id" id="id" value="<%=report._id  %>">
-                    <select name="status" id="status" >
-                        <option value="<%=report.status  %>">Nå: <%=report.status  %></option>
-                        <option value="Aktiv">Aktiv</option>
-                        <option value="Lukket">Lukket</option>
-                    </select>
-                    <button type="submit">Oppdater</button>
-                </form>
-            <% }else{ %>
-            <p>Status: <%= report.status  %></p>
-            <% } %>
-        </section>
-    <%});  %>
-    <% }else { %>
-        <section id="noReport">
-        <h3>Ikke Noen Avgikk enda!!</h3>
-        </section>
-        <% } %>
-</main>
+    <link rel="stylesheet" href="/css/allReports.css">
+    <script src="/script/fetch_update_status.js" defer></script>
+    <script src="/script/fetch_delete_report.js" defer></script>
+    <%- include("./partials/header.ejs") %>
+        <h2>
+            <%= title %>
+        </h2>
 
-</body>
-</html>
+        <!--Category form for -->
+
+        <section class="categoriesSection">
+            <% if(category){ %>
+                <h3>Valgt Kategori: <%=category %>
+                </h3>
+                <% } %>
+                    <form action="/avvik/alle" method="get">
+                        <label for="categorySelect">Kategori: </label>
+                        <select name="categorySelect" id="categorySelect">
+                            <option value="">Velg Her:</option>
+                            <%categories.forEach(category=>{%>
+                                <option value="<%=category.name  %>">
+                                    <%=category.name %>
+                                </option>
+                                <% }) %>
+                            <option value="">Alle</option>
+                        </select>
+                        <button type="submit">Filtrer</button>
+                    </form>
+        </section>
+
+        <!--If category-->
+        <main>
+            <% if(reports.length>0){ %>
+                <%reports.forEach(report=> {%>
+                    <% if(category){%>
+                        <% if(report.category===category ){ %>
+                            <section class="report">
+                                <% if(user.role==="admin" ){ %>
+                                    <form class="delete">
+                                        <button class="delete" id="id" name="id" data-id="<%=report._id  %>"
+                                            type="submit">Slett</button>
+                                    </form>
+
+                                    <% } %>
+                                        <h4>
+                                            <%= report.title %>
+                                        </h4>
+                                        <div>
+                                            <%= report.description %>
+                                        </div>
+                                        <p>Kategori: <%= report.category %>
+                                        </p>
+                                        <% if(user.role==="admin" ){ %>
+                                            <form class="updateStatus">
+                                                <input type="hidden" name="id" id="id" value="<%=report._id  %>">
+                                                <select name="status" id="status">
+                                                    <option value="<%=report.status  %>">Nå: <%=report.status %>
+                                                    </option>
+                                                    <option value="Aktiv">Aktiv</option>
+                                                    <option value="Lukket">Lukket</option>
+                                                </select>
+                                                <button type="submit">Oppdater</button>
+                                            </form>
+                                            <% }else{ %>
+                                                <p>Status: <%= report.status %>
+                                                </p>
+                                                <% } %>
+                            </section>
+                            <% } %>
+                                
+
+
+                                    <!-- If not category -->
+                                    <%} else{ %>
+                                        <section class="report">
+                                            <% if(user.role==="admin" ){ %>
+                                                <form class="delete">
+                                                    <button class="delete" id="id" name="id" data-id="<%=report._id  %>"
+                                                        type="submit">Slett</button>
+                                                </form>
+
+                                                <% } %>
+                                                    <h4>
+                                                        <%= report.title %>
+                                                    </h4>
+                                                    <div>
+                                                        <%= report.description %>
+                                                    </div>
+                                                    <p>Kategori: <%= report.category %>
+                                                    </p>
+                                                    <% if(user.role==="admin" ){ %>
+                                                        <form class="updateStatus">
+                                                            <input type="hidden" name="id" id="id"
+                                                                value="<%=report._id  %>">
+                                                            <select name="status" id="status">
+                                                                <option value="<%=report.status  %>">Nå:
+                                                                    <%=report.status %>
+                                                                </option>
+                                                                <option value="Aktiv">Aktiv</option>
+                                                                <option value="Lukket">Lukket</option>
+                                                            </select>
+                                                            <button type="submit">Oppdater</button>
+                                                        </form>
+                                                        <% }else{ %>
+                                                            <p>Status: <%= report.status %>
+                                                            </p>
+                                                            <% } %>
+                                        </section>
+                                        <% } %>
+                                            <%}); %>
+                                                <% }else { %>
+                                                    <section id="noReport">
+                                                        <h4>Ikke Noen Avgikk enda!!</h4>
+                                                    </section>
+                                                    <% } %>
+        </main>
+
+        </body>
+
+        </html>

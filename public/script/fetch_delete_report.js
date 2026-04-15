@@ -1,8 +1,8 @@
 
 
 document.addEventListener("submit", async(e)=>{
-    e.preventDefault()
     if(e.target.classList.contains("delete")){
+         e.preventDefault()
         const reportID = e.target.id.dataset.id;
         console.log(reportID);
         

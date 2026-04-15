@@ -21,7 +21,7 @@ h2{
     border-radius: 0.5vw;
     padding: 1vw;
 }
-.report h3{
+.report h4{
     color: white;
     font-family: var(--josefin);
     font-weight: 400;
@@ -44,7 +44,7 @@ h2{
     border-radius: 0.5vw;
     padding: 1vw;
 }
-#noReport h3{
+#noReport h4{
     color: white;
     font-family: var(--josefin);
     font-weight: 400;
@@ -87,6 +87,44 @@ h2{
     width: 5vw;
     justify-content: center;
     color: var(--primary);
+    cursor: pointer;
+}
+.categoriesSection{
+    display: flex;
+    flex-direction: column;
+    margin-left: 10vw;
+}
+.categoriesSection h3{
+    font-size: 1.6vw;
+    color: var(--primary);
+    font-family: var(--judson);
+
+}
+.categoriesSection form{
+    display: flex;
+    gap: 0.4vw;
+}
+.categoriesSection label{
+    font-size: 1.3vw;
+    color: var(--primary);
+    font-family: var(--judson);
+}
+.categoriesSection select{
+    font-family: var(--josefin);
+    font-weight: 400;
+    color: var(--primary);
+    font-size: 1vw;
+    border: 0.2vw solid var(--primary);
+    border-radius: 0.3vw;
+    padding: 0.3vw;
+}
+.categoriesSection button{
+    font-size: 1vw;
+    color: white;
+    background: var(--primary);
+    border: 0;
+    border-radius: 0.3vw;
+    font-family: var(--judson);
     cursor: pointer;
 }
 :root{

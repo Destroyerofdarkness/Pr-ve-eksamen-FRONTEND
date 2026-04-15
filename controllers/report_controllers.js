@@ -28,10 +28,17 @@ const report_publish = async(req,res)=>{
 }
 
 const all_report_page = async(req,res)=>{
+    const chosenCategory = req.query.categorySelect;
     try {
+        
+        if(!chosenCategory && chosenCategory === ""){
+            let category = null
+        }
+        let category = chosenCategory
+        const {allCategories} = await get_req("/category/get");
         const {reports} = await get_req("/report/all");
         console.log(reports)
-        res.render("allReports", {title: "Les Avvik", reports})
+        res.render("allReports", {title: "Les Avvik", reports, categories:allCategories, category})
     } catch (err) {
         console.log(err);
         res.status(500).send("Internal Server Error. Please Wait!!")

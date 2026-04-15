@@ -1,7 +1,7 @@
 
 document.addEventListener("submit", async(e)=>{
-    e.preventDefault()
     if(e.target.classList.contains("updateStatus")){
+         e.preventDefault()
         const status = e.target.status.value;
         const id = e.target.id.value;
         
